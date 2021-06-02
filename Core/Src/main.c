@@ -118,11 +118,14 @@ int main(void)
   // Value = HAL_CRC_Calculate(&hcrc,array,sizeof(array));//0x2059acae
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  HAL_UART_Transmit(&huart2,"Entering Main app", 20, 1000);
+  HAL_Delay(3000);
   while (1)
   {
-	//  HAL_UART_Transmit();
+
+	  HAL_UART_Transmit(&huart2,"Main app Inprogress", 20, 1000);
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-	  HAL_Delay(300);
+	  HAL_Delay(3000);
     /* USER CODE END WHILE */
 //    MX_USB_HOST_Process();
 
